@@ -1,6 +1,6 @@
 # Active Directory Bulk User Creation
 Description: Setting up an Active Directory using Oracle VirtualBox with over 1000 users. 
-Credits for home lab: JM[link github] [link YT video]
+Credits for lab: JM[https://github.com/joshmadakor1], [https://youtu.be/MHsI8hJmggI?si=jeKxMD7v_-a03UoP]
 
 For this project I wanted to demonstrate my ability to set up an Active Directory using Oracle VirtualBox with Powershell Automation, Windows Server 2019 and Windows 10.
 
