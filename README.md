@@ -23,9 +23,9 @@ For this project I want to demonstrate my ability to set up an Active Directory 
 
 <h2>Program walk-through:</h2>
 
+When setting this lab up, we need to download [Oracle VirtualBox](https://www.virtualbox.org/wiki/Downloads), [Windows Server 2019 ISO](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019), and [Windows 10 ISO](https://www.microsoft.com/en-us/software-download/windows10ISO). 
 
-#Steps
-When setting this lab up, I downloaded Oracle VirtualBox, Windows Server 2019 ISO, and Windows 10 ISO. 
+When setting up VirtualBox, we will name our virtual machine "Domain Controller" (stands for Domain Controller). The type will be: Windows. The version is: Other Windows (64-bit). For memory size, I chose 2048MB (2GB). The amount you input depends on how much RAM the system you're running your machine on. I left the stock input of 20 GB for the Virtual Hard Disk Size. 
 
 I set up the domain controller first within VirtualBox. I configured NAT on there. 
 
