@@ -1,4 +1,6 @@
 # Active Directory Bulk User Creation
+![active directory title pic](https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/e557e26f-301a-47d7-a57d-6552d21249a4)
+
 Description: Setting up an Active Directory using Oracle VirtualBox with over 1000 users. 
 Credits for lab: [Josh Madakor](https://github.com/joshmadakor1]), [YouTube link](https://youtu.be/MHsI8hJmggI?si=jeKxMD7v_-a03UoP)
 
