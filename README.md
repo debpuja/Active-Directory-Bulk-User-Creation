@@ -35,7 +35,9 @@ I will then configure the Domain Controller VM by going into Settings and adding
 
 After powering on the machine, I selected the Windows 2019 Server as the optical drive. Selecting this option will prompt you to begin the installation of Windows Server 2019. I selected the "Windows Server 2019 Standard Evaluation (Desktop Expereince)" since creating the active directory will be a lot easier with a GUI. The type of installation we want is "Custom: Install Windows only (advanced)", this selction will format the hard drive and instal from scratch.
 
-During the installation it might take 10-15 minutes to instal. The server will reboot mutiple times. When prompted to "Press any key to boot from CD or DVD", ignore that the installation will continue. ....After choosing the preferences,
+During the installation it might take 10-15 minutes to instal. The server will reboot mutiple times. When prompted to "Press any key to boot from CD or DVD", ignore that and the installation will continue normally. After choosing the preferences, I was prompted to give a password for the default admin account. The password I chose to use (and will use for all passwords for this lab is: Password1). 
+
+
 
 I set up the domain controller first within VirtualBox. I configured NAT on there. 
 
