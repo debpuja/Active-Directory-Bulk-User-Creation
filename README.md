@@ -34,8 +34,12 @@ I will then configure the Domain Controller VM by going into Settings and adding
 <img width="750" alt="5 2 NICS" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/f8b6b3b3-bf1d-4e35-a240-54f455a140bb">
 
 After powering on the machine, I selected the Windows 2019 Server as the optical drive. Selecting this option will prompt you to begin the installation of Windows Server 2019. I selected the "Windows Server 2019 Standard Evaluation (Desktop Expereince)" since creating the active directory will be a lot easier with a GUI. The type of installation we want is "Custom: Install Windows only (advanced)", this selction will format the hard drive and instal from scratch.
+<p align="center">
+<img width="750" alt="6 Installing windows" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/da5e8adc-f1d1-477c-a6a8-11a398ba37a8">
 
 During the installation it might take 10-15 minutes to instal. The server will reboot mutiple times. When prompted to "Press any key to boot from CD or DVD", ignore that and the installation will continue normally. After choosing the preferences, I was prompted to give a password for the default admin account. The password I chose to use (and will use for all passwords for this lab is: Password1). 
+<p align="center">
+<img width="750" alt="7 admin password setup" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/367391f7-525f-4f59-9da7-88e0244aba11">
 
 
 
