@@ -41,9 +41,17 @@ During the installation it might take 10-15 minutes to instal. The server will r
 <p align="center">
 <img width="750" alt="7 admin password setup" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/367391f7-525f-4f59-9da7-88e0244aba11">
 
+After sucessfully instaling Windows Server 2019, we will instal Oracle VM VirtualBox Guest Editions. This consists of device drivers and system applications that optimize the guest operating system for better performance and usability. You will execute this by going to Devices > Insert Guest Addition CD image. 
+<p align="center">
+<img width="592" alt="8 installing guest addition" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/858311f3-6dcb-45a0-b194-fb91970bb718">
 
+Then go to File Explorer > This PC > CD Drive (D:) VirtualBox Guest Additions > VboxWindowsAdditions-amd64. After the instal is complete reboot the VM. 
+<p align="center">
+<img width="750" alt="9 Completed instal of guest additions" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/2eb39a7a-c9cc-4bd8-a4ae-5a455cf1d127">
 
-I set up the domain controller first within VirtualBox. I configured NAT on there. 
+ 
+-------------------
+I configured NAT on there. 
 
 I configured user home directories
 
