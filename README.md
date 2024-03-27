@@ -68,7 +68,7 @@ Subnet gateway: 255.255.255.0
 We will not use a default gateway since the domain controller itself will serve as the default gateway. 
 For the DNS server when installing active directory, it automatically installs DNS, so this serer will use itself as the DNS sever. I used the IP address used for the Internal NIC: 172.16.01. 
 <p align="center">
-<img width="812" alt="12 assigning ip to internal nic" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/c25506c2-8153-4f11-8d67-63b14e9b9bb6">
+<img width="750" alt="12 assigning ip to internal nic" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/c25506c2-8153-4f11-8d67-63b14e9b9bb6">
 
 
  
