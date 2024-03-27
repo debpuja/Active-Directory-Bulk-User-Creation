@@ -33,19 +33,19 @@ I will then configure the Domain Controller VM by going into Settings and adding
 <p align="center">
 <img width="750" alt="5 2 NICS" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/f8b6b3b3-bf1d-4e35-a240-54f455a140bb">
 
-After powering on the machine, I selected the Windows 2019 Server as the optical drive. Selecting this option will prompt you to begin the installation of Windows Server 2019. I selected the "Windows Server 2019 Standard Evaluation (Desktop Expereince)" since creating the active directory will be a lot easier with a GUI. The type of installation we want is "Custom: Install Windows only (advanced)", this selction will format the hard drive and instal from scratch.
+After powering on the machine, I selected the Windows 2019 Server as the optical drive. Selecting this option will prompt you to begin the installation of Windows Server 2019. I selected the "Windows Server 2019 Standard Evaluation (Desktop Expereince)" since creating the active directory will be a lot easier with a GUI. The type of installation we want is "Custom: Install Windows only (advanced)", this selction will format the hard drive and install from scratch.
 <p align="center">
 <img width="700" alt="6 Installing windows" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/da5e8adc-f1d1-477c-a6a8-11a398ba37a8">
 
-During the installation it might take 10-15 minutes to instal. The server will reboot mutiple times. When prompted to "Press any key to boot from CD or DVD", ignore that and the installation will continue normally. After choosing the preferences, I was prompted to give a password for the default admin account. The password I chose to use (and will use for all passwords for this lab is: Password1). 
+During the installation it might take 10-15 minutes to install. The server will reboot mutiple times. When prompted to "Press any key to boot from CD or DVD", ignore that and the installation will continue normally. After choosing the preferences, I was prompted to give a password for the default admin account. The password I chose to use (and will use for all passwords for this lab is: Password1). 
 <p align="center">
 <img width="700" alt="7 admin password setup" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/367391f7-525f-4f59-9da7-88e0244aba11">
 
-After sucessfully instaling Windows Server 2019, we will instal Oracle VM VirtualBox Guest Editions. This consists of device drivers and system applications that optimize the guest operating system for better performance and usability. You will execute this by going to Devices > Insert Guest Addition CD image. 
+After sucessfully instaling Windows Server 2019, we will install Oracle VM VirtualBox Guest Editions. This consists of device drivers and system applications that optimize the guest operating system for better performance and usability. You will execute this by going to Devices > Insert Guest Addition CD image. 
 <p align="center">
 <img width="592" alt="8 installing guest addition" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/858311f3-6dcb-45a0-b194-fb91970bb718">
 
-Then go to File Explorer > This PC > CD Drive (D:) VirtualBox Guest Additions > VboxWindowsAdditions-amd64. After the instal is complete reboot the VM. 
+Then go to File Explorer > This PC > CD Drive (D:) VirtualBox Guest Additions > VboxWindowsAdditions-amd64. After the install is complete reboot the VM. 
 <p align="center">
 <img width="750" alt="9 Completed instal of guest additions" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/2eb39a7a-c9cc-4bd8-a4ae-5a455cf1d127">
 
@@ -55,10 +55,21 @@ Selct the Network icon at the bottom right corner > Network & Internet Settings 
 <p align="center">
 <img width="750" alt="10 internet renaming " src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/5b765032-aa3a-4277-9ace-644fc9f0cba1">
 
-
-With the other Ethernet I will do the same thing as I did above and view the IPv4 address. If the address starts with 169.254.**.**, this is the Internal NIC. This specfic adapter was look for a DHCP server to try to get an IP address from somewhere, but it was unable to find one. So the 169.254.**.** address was automatically assigned. I also went ahead and renamed this ethernet to "INTERNAL". 
+With the other Ethernet I will do the same thing as I did above and view the IPv4 address. If the address starts with 169.254.**.**, this is the Internal NIC. This specfic adapter was look for a DHCP server to try to get an IP address from somewhere, but it was unable to find one. So the 169.254.**.** address was automatically assigned. I also went ahead and renamed this ethernet to "INTERNAL".
 <p align="center">
 <img width="750" alt="11 internal renaming" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/e021d74c-e6e0-47ca-87ff-7d97b2dfff6c">
+
+Additionally, I was also add an IP address to the Internal NIC. To do this, right click on Internal > Properties > Internet Protocol Version 4 (TCP/IPv4) Properties > Use the following IP address. 
+
+IP Address: 172.16.0.1
+
+Subnet gateway: 255.255.255.0
+
+We will not use a default gateway since the domain controller itself will serve as the default gateway. 
+For the DNS server when installing active directory, it automatically installs DNS, so this serer will use itself as the DNS sever. I used the IP address used for the Internal NIC: 172.16.01. 
+<p align="center">
+<img width="812" alt="12 assigning ip to internal nic" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/c25506c2-8153-4f11-8d67-63b14e9b9bb6">
+
 
  
 -------------------
