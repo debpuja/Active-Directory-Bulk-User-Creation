@@ -53,12 +53,12 @@ Next, we will set up IP addressing. For our Domain Controller, there are 2 NICs:
 
 Selct the Network icon at the bottom right corner > Network & Internet Settings > Ethernet > Change adapter options. You will notice you have two ethernets. We have to figure our which one is Internal and which one is Internet and name them appropriately. To do this, right click on one of the two ethernets and click Status > Details. You want to go to IPv4 and see if the address start with 10.0.*.**. If so, this ethernet is concluded as the Internet NIC. I went ahead and changed the name of this Ethernet to "INTERNET" clarify that this Ethernet is the Internet NIC. 
 <p align="center">
-<img width="834" alt="10 internet renaming " src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/5b765032-aa3a-4277-9ace-644fc9f0cba1">
+<img width="750" alt="10 internet renaming " src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/5b765032-aa3a-4277-9ace-644fc9f0cba1">
 
 
 With the other Ethernet I will do the same thing as I did above and view the IPv4 address. If the address starts with 169.254.**.**, this is the Internal NIC. This specfic adapter was look for a DHCP server to try to get an IP address from somewhere, but it was unable to find one. So the 169.254.**.** address was automatically assigned. I also went ahead and renamed this ethernet to "INTERNAL". 
 <p align="center">
-<img width="840" alt="11 internal renaming" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/e021d74c-e6e0-47ca-87ff-7d97b2dfff6c">
+<img width="750" alt="11 internal renaming" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/e021d74c-e6e0-47ca-87ff-7d97b2dfff6c">
 
  
 -------------------
