@@ -78,6 +78,22 @@ After loggin back in again, we will install active directory domain services (AD
 <p align="center">
 <img width="750" alt="14 choosing ADDS" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/9e7c3e65-d3a6-4b1c-a301-6360795ccd38">
 
+The serveral few prompts afterwards, click next untill you get to the install button. Start installing the ADDS. After the role has been installed, you can close out of that screen. 
+<p align="center">
+<img width="750" alt="15 installing ADDS" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/e0f3e522-0deb-4069-8437-614ca6afae7b">
+
+At the server manager dshaboard, click the notifcation button. There should be a yellow trinagular caution sign. Click "Promote this server to a domain controller". We have to do the post deployment configuration; we installed the software for ADDS but we didn't actually create the domain yet. 
+<p align="center">
+<img width="750" alt="16 making the domain" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/ad21b331-1859-402c-9149-2077bba1175b">
+
+At the deployment configuration click the option of "Add a new forest", and then give a root domain name. I named my domain "mydomain.com". 
+<p align="center">
+<img width="750" alt="17 naming domain" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/bab9e5d5-f189-4cca-be17-63bb5166a9ec">
+ 
+For the password, I will be using the password: Password1. Click next for the DNS Options, Additional Options, Paths, Review Options. At Prerequisites Check, you can click install. 
+<p align="center">
+<img width="750" alt="18 ADDS config instal" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/c9ffa07a-9090-4544-8871-f5ec7fc5ffc5">
+
 
 
  
