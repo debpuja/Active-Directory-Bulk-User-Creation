@@ -70,6 +70,9 @@ For the DNS server when installing active directory, it automatically installs D
 <p align="center">
 <img width="750" alt="12 assigning ip to internal nic" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/c25506c2-8153-4f11-8d67-63b14e9b9bb6">
 
+I also went ahead and renamed the PC as it will help being more organized. Start > Settings > System > About > Rename this PC. The current name is an arbitary name. I will rename the PC to "Domain Controller". Then select Restart Now. 
+<p align="center">
+<img width="750" alt="13 renmaing PC" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/5d7f4711-6197-4fab-95a9-f57f3e77ecf5">
 
  
 -------------------
