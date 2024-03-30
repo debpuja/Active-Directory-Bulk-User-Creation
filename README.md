@@ -74,15 +74,15 @@ I also went ahead and renamed the PC as it will help being more organized. Start
 <p align="center">
 <img width="750" alt="13 renmaing PC" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/5d7f4711-6197-4fab-95a9-f57f3e77ecf5">
 
-After loggin back in again, we will install active directory domain services (ADDS) and create a domain. We will start at the Server Manager. Add roles and features > Next > Role-based or feature based installation. At this point, you will pick the server you want to use; we should only have one server named "DC" so pick that one. Next choose "Active Directory Domain Services" > Add features. 
+After loggin back in again, we will install active directory domain services (AD DS) and create a domain. We will start at the Server Manager. Add roles and features > Next > Role-based or feature based installation. At this point, you will pick the server you want to use; we should only have one server named "DC" so pick that one. Next choose "Active Directory Domain Services" > Add features. 
 <p align="center">
 <img width="750" alt="14 choosing ADDS" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/9e7c3e65-d3a6-4b1c-a301-6360795ccd38">
 
-The serveral few prompts afterwards, click next untill you get to the install button. Start installing the ADDS. After the role has been installed, you can close out of that screen. 
+The serveral few prompts afterwards, click next untill you get to the install button. Start installing the AD DS. After the role has been installed, you can close out of that screen. 
 <p align="center">
 <img width="750" alt="15 installing ADDS" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/e0f3e522-0deb-4069-8437-614ca6afae7b">
 
-At the server manager dshaboard, click the notifcation button. There should be a yellow trinagular caution sign. Click "Promote this server to a domain controller". We have to do the post deployment configuration; we installed the software for ADDS but we didn't actually create the domain yet. 
+At the server manager dshaboard, click the notifcation button. There should be a yellow trinagular caution sign. Click "Promote this server to a domain controller". We have to do the post deployment configuration; we installed the software for AD DS but we didn't actually create the domain yet. 
 <p align="center">
 <img width="750" alt="16 making the domain" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/ad21b331-1859-402c-9149-2077bba1175b">
 
@@ -108,7 +108,6 @@ We will now create a new user on the _ADMINS folder. Click on the newly formed "
 
 For the password, use the same password that we've used prior: Password1. Uncheck, "User must change password at next logon", and check "Password never expires". Since this is a lab environment we don't want to deal with the password until password policy selection. Lastly, click "Finish" to add user. You can notice that we have an account under _ADMINS. 
 
-
 This account is not an domain administrator yet although it has the name of "a-pdeb". To make the user a domain admin, right click the name > Properties > Member of > Add. Type "domain admins" in the "Enter the object names to select (examples):" > Check Names. Domain Admins is now underlined. Finish up by clicking "OK". Apply the configurations and click OK again. The domain admin account is now made!
 <p align="center">
 <img width="750" alt="22 domain admins check names" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/c057d24e-3337-4235-a9bf-1483af87d7ef">
@@ -117,23 +116,40 @@ To use our domain admin account, sign out of the VM. When logging in, click "Oth
 <p align="center">
 <img width="750" alt="23 logging into admin account with a-" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/921835db-1251-49a7-967b-cf5e24e7f869">
 
-Next up, we will install RAS/NAT (remote access server/network acceesss translation) on the domain controller. When we create our Windows 10 client, the NAS/RAT allows the client to be on the private virtual network but still have access to the interent through the domain controller. To set this up, we will go the Server dashboard > Add s and features > Next > Role-based or feature based installation > Select the server we created (should be named "DC.mydomain.com") > Next > Select "Remote Access" > Next > Click next for Features and Remote Access > In Role Services select "Routing" > Add features > Next > Click next for Web Server Role (IIS) and Role Services > at Confirmation page click "Install". 
+Next up, we will install RAS/NAT (remote access server/network acceesss translation) on the domain controller. When we create our Windows 10 client, the NAS/RAT allows the client to be on the private virtual network but still have access to the interent through the domain controller. 
+
+To set this up, we will go the Server dashboard > Add roles and features > Next > Role-based or feature based installation > Select the server we created (should be named "DC.mydomain.com") > Next > Select "Remote Access" > Next > Click next for Features and Remote Access > In Role Services select "Routing" > Add features > Next > Click next for Web Server Role (IIS) and Role Services > at Confirmation page click "Install". Install can take max 5 minutes. After installation close the window.
 <p align="center">
 <img width="750" alt="24 installing ras:nat" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/304ef446-287f-492c-bb20-ae87d8371615">
 
+Next we will set up the routing and remote access. Go the Server dashboard > click on Tools on the top right hand side > Routing and Remote Access > Right click on "DC (local)" > Configure and Enable Routing and Remote Access > Next > Select NAT > Next > Select "INTERNET" NAT > Next > Finish. We can observe that the "DC (local)" icon is now green, this mean that the routing has been configured.
+<p align="center">
+<img width="750" alt="25 routing and remote access green light" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/d9d54d61-c851-41ad-b028-d75327f530ed">
+
+Next step is to set up a DHCP server on our domain controller. DHCP will allow Windows 10 clients to get an IP address that will let them get on the internet and browse the internet. Go the Server dashboard > Add roles and features > Next > Role-based or feature based installation > Select the server we created (should be named "DC.mydomain.com") > Next > Select "DHCP Server" > Add features > Next > Click "Next" for Features and DHCP Server, Click "Install" at the Confirmation page. After installation you can close our of the window. 
+<p align="center">
+<img width="750" alt="26 installing dhcp" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/4af22734-e9d7-43ad-b2c1-ec74034c20a9">
 
 
--------------------
-I configured NAT on there. 
 
-I configured user home directories
 
-I ran the scripts for user creations suing Powershell Automation.
 
-I configured DHCP srvices.
 
-I shared folders wihtin the user group. 
 
-I also configured group policy settings. 
 
-PowerShell Automation: Josh demonstrates how to efficiently add over 1,000 users to the Active Directory using PowerShell scripts. This automation streamlines the process and is essential for managing large user bases.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
