@@ -126,10 +126,13 @@ Next we will set up the routing and remote access. Go the Server dashboard > cli
 <p align="center">
 <img width="750" alt="25 routing and remote access green light" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/d9d54d61-c851-41ad-b028-d75327f530ed">
 
-Next step is to set up a DHCP server on our domain controller. DHCP will allow Windows 10 clients to get an IP address that will let them get on the internet and browse the internet. Go the Server dashboard > Add roles and features > Next > Role-based or feature based installation > Select the server we created (should be named "DC.mydomain.com") > Next > Select "DHCP Server" > Add features > Next > Click "Next" for Features and DHCP Server, Click "Install" at the Confirmation page. After installation you can close our of the window. 
+Next step is to set up a DHCP server on our domain controller. DHCP will allow Windows 10 clients to get an IP address that will let them get on the internet and browse the internet. Go the Server dashboard > Add roles and features > Next > Role-based or feature based installation > Select the server we created (should be named "DC.mydomain.com") > Next > Select "DHCP Server" > Add features > Next > Click "Next" for Features and DHCP Server, Click "Install" at the Confirmation page. After installation you can close out of the window. 
 <p align="center">
 <img width="750" alt="26 installing dhcp" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/4af22734-e9d7-43ad-b2c1-ec74034c20a9">
 
+The purpose of DHCP is to allow computers on the network to automatically get their IP addresses. We will create a scope that will give the IP addresses in this range: 172.16.0.100 with this subnet mask. Go the Server dashboard > click on Tools on the top right hand side > Select "DHCP" > When expanding "dc.mydomain.com" you will notice IPv4 and IPv6 are down (you can see they are red) > Expand IPv4 > Right click "IPv4" > New Scope....
+
+For the Scope name, 
 
 
 
