@@ -90,13 +90,30 @@ At the deployment configuration click the option of "Add a new forest", and then
 <p align="center">
 <img width="750" alt="17 naming domain" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/bab9e5d5-f189-4cca-be17-63bb5166a9ec">
  
-For the password, I will be using the password: Password1. Click next for the DNS Options, Additional Options, Paths, Review Options. At Prerequisites Check, you can click install. 
+For the password, I will be using the password: Password1. Click next for the DNS Options, Additional Options, Paths, Review Options. At Prerequisites Check, you can click install. After it finsihes install, the computer will automatically restart. Restarting will take 5-10 minutes to complete. 
 <p align="center">
 <img width="750" alt="18 ADDS config instal" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/c9ffa07a-9090-4544-8871-f5ec7fc5ffc5">
 
+Now when logging into the VM, we have the user "MYDOMAIN\Adminsitrator" login. 
+<p align="center">
+<img width="750" alt="19 MYDOMAIN admin login" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/95494853-7ca6-494f-b728-d41747e98f00">
+
+Next we will create our own dedicated domain admin account instead of using the the built-in adminstrator account. Go to Start > Windows Administrative Tools > Active Directory Users and Computers. On the left hand side, you will see the domain we added in earlier! We will now create an organizational unit to out our admin account in. Right click on mydomain.com > New > Organizational Unit. I will name my unit "_ADMINS". Make sure to uncheck the "Protect container from accidental deletion", just so it's easier to delete if we need to. 
+<p align="center">
+<img width="750" alt="20 organizatinal unit" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/118134da-8a54-48a0-bbe8-9fa026d412f1">
+
+We will now create a new user on the _ADMINS folder. Click on the newly formed "_ADMINS" organizational unit folder > New > User. Fill out the info with your name. For User login name use: a-[first initial][last name]. The "a-" signifies that this account is an administrative account.
+<p align="center">
+<img width="750" alt="21 new user in _admins" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/f6f44cdf-191a-4f0b-84b5-2bc8945bdf3f">
+
+For the password, use the same password that we've used prior: Password1. Uncheck, "User must change password at next logon", and check "Password never expires". Since this is a lab environment we don't want to deal with the password until password policy selection. Lastly, click "Finish" to add user. You can notice that we have an account under _ADMINS. This account is not an domain administrator yet although it has the name of "a-pdeb". To make the user a domain admin, right click the name > Properties > Member of > Add. Type "domain admins" in the "Enter the object names to select (examples):" > Check Names. Domain Admins is now underlined. 
+<p align="center">
+<img width="750" alt="22 domain admins check names" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/c057d24e-3337-4235-a9bf-1483af87d7ef">
 
 
- 
+
+
+
 -------------------
 I configured NAT on there. 
 
