@@ -106,11 +106,16 @@ We will now create a new user on the _ADMINS folder. Click on the newly formed "
 <p align="center">
 <img width="750" alt="21 new user in _admins" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/f6f44cdf-191a-4f0b-84b5-2bc8945bdf3f">
 
-For the password, use the same password that we've used prior: Password1. Uncheck, "User must change password at next logon", and check "Password never expires". Since this is a lab environment we don't want to deal with the password until password policy selection. Lastly, click "Finish" to add user. You can notice that we have an account under _ADMINS. This account is not an domain administrator yet although it has the name of "a-pdeb". To make the user a domain admin, right click the name > Properties > Member of > Add. Type "domain admins" in the "Enter the object names to select (examples):" > Check Names. Domain Admins is now underlined. 
+For the password, use the same password that we've used prior: Password1. Uncheck, "User must change password at next logon", and check "Password never expires". Since this is a lab environment we don't want to deal with the password until password policy selection. Lastly, click "Finish" to add user. You can notice that we have an account under _ADMINS. 
+
+
+This account is not an domain administrator yet although it has the name of "a-pdeb". To make the user a domain admin, right click the name > Properties > Member of > Add. Type "domain admins" in the "Enter the object names to select (examples):" > Check Names. Domain Admins is now underlined. Finish up by clicking "OK". Apply the configurations and click OK again. The domain admin account is now made!
 <p align="center">
 <img width="750" alt="22 domain admins check names" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/c057d24e-3337-4235-a9bf-1483af87d7ef">
 
-
+To use our domain admin account, sign out of the VM. When logging in, click "Other user". Enter the credentials you used to make the domain admin account. 
+<p align="center">
+<img width="750" alt="23 logging into admin account with a-" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/921835db-1251-49a7-967b-cf5e24e7f869">
 
 
 
