@@ -117,7 +117,9 @@ To use our domain admin account, sign out of the VM. When logging in, click "Oth
 <p align="center">
 <img width="750" alt="23 logging into admin account with a-" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/921835db-1251-49a7-967b-cf5e24e7f869">
 
-Next up, we will install RAS/NAT (remote access server/network acceesss translation) on the domain controller. When we create our Windows 10 client, the NAS/RAT allows the client to be on the private virtual network but still have access to the interent through the domain controller. To set this up, we will go the Server dashboard > Add s and features > Next > 
+Next up, we will install RAS/NAT (remote access server/network acceesss translation) on the domain controller. When we create our Windows 10 client, the NAS/RAT allows the client to be on the private virtual network but still have access to the interent through the domain controller. To set this up, we will go the Server dashboard > Add s and features > Next > Role-based or feature based installation > Select the server we created (should be named "DC.mydomain.com") > Next > Select "Remote Access" > Next > Click next for Features and Remote Access > In Role Services select "Routing" > Add features > Next > Click next for Web Server Role (IIS) and Role Services > at Confirmation page click "Install". 
+<p align="center">
+<img width="750" alt="24 installing ras:nat" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/304ef446-287f-492c-bb20-ae87d8371615">
 
 
 
