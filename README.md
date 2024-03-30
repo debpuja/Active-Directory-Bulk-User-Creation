@@ -74,7 +74,11 @@ I also went ahead and renamed the PC as it will help being more organized. Start
 <p align="center">
 <img width="750" alt="13 renmaing PC" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/5d7f4711-6197-4fab-95a9-f57f3e77ecf5">
 
-After loggin back in again, 
+After loggin back in again, we will install active directory domain services (ADDS) and create a domain. We will start at the Server Manager. Add roles and features > Next > Role-based or feature based installation. At this point, you will pick the server you want to use; we should only have one server named "DC" so pick that one. Next choose "Active Directory Domain Services" > Add features. 
+<p align="center">
+<img width="750" alt="14 choosing ADDS" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/9e7c3e65-d3a6-4b1c-a301-6360795ccd38">
+
+
 
  
 -------------------
