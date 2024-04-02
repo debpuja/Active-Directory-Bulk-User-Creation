@@ -156,7 +156,15 @@ For the Router (Default Gateway) page, we will enter the Domain Controller's IP 
 <p align="center">
 <img width="750" alt="31 router deafult gateway" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/f2d3a8fd-09ba-4eeb-85b7-fda1c4daa61a">
 
+Next we will configure the Domain name and DNS server. When installing active directory on the domain controller it automatically installs DNS. Due to that, we will use the domain controller as out DNS server. We have to do this in order to join the domain. For parent domain it should say: mydomain.com. The IP address should also also be listed below. 
+<p align="center">
+<img width="750" alt="32 domain name" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/5c288724-f4d9-4b1a-9893-f57affd0ffd4">
 
+Click Next when getting to the WINS Servers page. This page isn't applicibale for this lab. 
+
+Finally, when getting to the Activate Scope page, select "Yes, I want to activate this scope now". And afterwards you can click "Finish". 
+<p align="center">
+<img width="750" alt="33 activate scope" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/f3d5a019-2e60-47f7-b1b2-abcf088f6a8e">
 
 
 
