@@ -182,6 +182,9 @@ Next up, we will use a powershell script to create all the users. We will do thi
 <p align="center">
 <img width="750" alt="37 opening link" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/531944f7-3de2-417f-a5f2-280530adca10">
 
+Within the zip file, there are two powershell scripts and one text file. Firstly, open the text file. This text file has a thousand randomized names that was retrieved by using a name generator. At the very top of the text file, enter your name as well. 
+<p align="center">
+<img width="750" alt="38 name at top" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/f5a41658-2d62-41af-9b4e-dcf23df4f006">
 
 
 
