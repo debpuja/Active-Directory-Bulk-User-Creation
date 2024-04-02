@@ -144,9 +144,17 @@ The subnet mask is set as: 255.255.255.0. > Next.
 
 For Exclusions and Delays, we don't need to add anything here. This page is mainly just to state what IP addresses we should exclude. Click Next. 
 
-For Lease Duration
+For Lease Duration, I will set it to 8 days. Lease duration is how long a computer can have that IP address before it needs to be refreshed. The time you input will depend how much you use it. Usually for public spaces, you would want to limit the lease to 2 hours, but since this is a lab I will set it for 8 days (this is more than enough time for me to use the VM). Then click Next. 
+<p align="center">
+<img width="750" alt="29 lease time" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/c8085ac3-1547-4600-bd27-098cc987e3df">
 
+For Configuration the DHCP Server, this part in the setup is asking if we want to configure DHCP options. This means we ask the clients, "Do you want to chose which server you want to use for DNS or gateway?". For this lab, we want to configure these options so we can have access to the internet. We will select "Yes, I want to configure these options now". 
+<p align="center">
+<img width="750" alt="30 dhcp options" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/8f392c7f-833d-4037-9932-46363da29652">
 
+For the Router (Default Gateway) page, we will enter the Domain Controller's IP address: 172.16.0.1, then click "Add". Since we already configured NAT on the domain controller and the domain controller has routing configured as well, becuase of this the clients are going to use this Internal NIC of the domain controller as their default gateway/router.
+<p align="center">
+<img width="750" alt="31 router deafult gateway" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/f2d3a8fd-09ba-4eeb-85b7-fda1c4daa61a">
 
 
 
