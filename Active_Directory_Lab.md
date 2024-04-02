@@ -2,7 +2,7 @@
 ![active directory title pic](https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/e557e26f-301a-47d7-a57d-6552d21249a4)
 
 <h2>Description</h2>
-Setting up an Active Directory using Oracle VirtualBox with over 1000 users using Mac OS. 
+Setting up an Active Directory using Oracle VirtualBox with over 1000 users using Mac OS.
 
 Credits for lab: [Josh Madakor](https://github.com/joshmadakor1]), [YouTube link](https://youtu.be/MHsI8hJmggI?si=jeKxMD7v_-a03UoP)
 <br />
@@ -198,9 +198,19 @@ Next, at the toolbar on PowerShell, click the Run Script button. Once you press 
 <p align="center">
 <img width="750" alt="41 creating users" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/0133aaa0-b523-4c9e-a149-7333428a9536">
 
-Additionally, you can also check out active directory in the meantime by going to Start > Windows Administrative Tools > Active Directory Users and Computers > expand mydomain.com > right click mydomain.com > Refresh. After refreshing, you can see that we have a "_USERS" folder with a bunch of users inside. This is jsut for us to visualize that when running the script, it will create all of the users from the text file. 
+Additionally, you can also check out active directory in the meantime by going to Start > Windows Administrative Tools > Active Directory Users and Computers > expand mydomain.com > right click mydomain.com > Refresh. After refreshing, you can see that we have a "_USERS" folder with a bunch of users inside. This is just for us to visualize that when running the script, it will create all of the users from the text file. 
 <p align="center">
 <img width="750" alt="42 _users folder in active dir" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/88ca8455-6086-414e-a2e9-e621fc68f0f3">
+
+To find your specfic name within mydomain.com, right click mydomain.com > Find. In the name section type your last name that you used for this lab to see if your name (or choice of name) shows up! 
+<p align="center">
+<img width="750" alt="43 finding my name" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/f60ffc69-5c7a-4a35-9b1b-ce3eed145596">
+
+At this point within the lab, we have our users created and our lab environment is set up! The last thing to do within our lab is to create a Windows 10 VM in VirtualBox. This VM will use an Internal NIC that will get its IP address from our DHCP server that we configured earlier.
+
+Go to Virtual Box to create a new VM. I will name this VM "Windows 10 Client" (you can name is whatever you'd like). The version of the VM will be: Windows 10 (64-bit).
+<p align="center">
+<img width="750" alt="44 windows 10 client1 vm" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/688c49a1-e768-45f0-b4a8-a8616275001d">
 
 
 
