@@ -136,11 +136,15 @@ The scope's name will be named what the IP range is. For the Scope's name I put:
 <p align="center">
 <img width="750" alt="27 scope name" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/757ff72f-96c5-4252-851e-851de4cc05ae">
 
-For the DHCP Server configuration, we will use the start IP address as 172.16.0.100. End IP address will put as: 172.16.0.200. The length can be set to: 24. The subnet mask is set as: 255.255.255.0
+For the DHCP Server configuration, we will use the start IP address as 172.16.0.100. End IP address will put as: 172.16.0.200. 
+The length can be set to: 24. 
+The subnet mask is set as: 255.255.255.0. > Next. 
 <p align="center">
 <img width="750" alt="28 start:end IP address" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/4fd8b5ae-7949-43aa-84bd-a22b1848eb36">
 
+For Exclusions and Delays, we don't need to add anything here. This page is mainly just to state what IP addresses we should exclude. Click Next. 
 
+For Lease Duration
 
 
 
