@@ -174,6 +174,13 @@ After refreshing, you should see the IPv4 and IPv6 trun to a green color indicat
 <p align="center">
 <img width="305" alt="35 green ipv4 and ipv6" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/0ee63e64-1172-4667-b63f-39df68409f57">
 
+Next, we have to make a configuration that lets us browse the internet from the domain controller. To do this, go the Server dashboard > Configure this local server. Locate IE Enhanced Security Configuration. This should be on already. Click "On" > turn off for both admins and users. If these were on, before every page loads, a prompt will show up asking "Are you sure you want to load this page?". This cnofiguration will prevent this from occuring. 
+<p align="center">
+<img width="750" alt="36 ie enhanced security config" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/009246b7-525a-42e3-b552-2fe507e6b3b3">
+
+Next up, we will use a powershell script to create all the users. We will do this by opening a link and downloading the zip file to retrieve the users. Open Internet Explorer and paste this link: [https://github.com/joshmadakor1/AD_PS/archive/master.zip](https://github.com/joshmadakor1/AD_PS/archive/master.zip). This link will prompt to download the zip file. Save and open the file. I saved this file to my desktop. 
+<p align="center">
+<img width="750" alt="37 opening link" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/531944f7-3de2-417f-a5f2-280530adca10">
 
 
 
