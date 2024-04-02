@@ -29,7 +29,7 @@ When setting up VirtualBox, we will name our virtual machine "Domain Controller"
 <p align="center">
 <img width="750" alt="4 summary setup for domain controller VM" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/b396086b-9214-42a6-b3b8-b60237f2c182">
 
-I will then configure the Domain Controller VM by going into Settings and adding 2 NICs (one for, NIC (Internet), and other for NIC (Internal)). 
+I will then configure the Domain Controller VM by going into Settings and adding 2 NICs (one for Internet and other for Internal). 
 <p align="center">
 <img width="750" alt="5 2 NICS" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/f8b6b3b3-bf1d-4e35-a240-54f455a140bb">
 
@@ -66,7 +66,7 @@ IP Address: 172.16.0.1
 Subnet gateway: 255.255.255.0
 
 We will not use a default gateway since the domain controller itself will serve as the default gateway. 
-For the DNS server when installing active directory, it automatically installs DNS, so this serer will use itself as the DNS sever. I used the IP address used for the Internal NIC: 172.16.01. 
+For the DNS server when installing active directory, it automatically installs DNS, so this server will use itself as the DNS sever. I used the IP address used for the Internal NIC: 172.16.01. 
 <p align="center">
 <img width="750" alt="12 assigning ip to internal nic" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/c25506c2-8153-4f11-8d67-63b14e9b9bb6">
 
@@ -132,7 +132,13 @@ Next step is to set up a DHCP server on our domain controller. DHCP will allow W
 
 The purpose of DHCP is to allow computers on the network to automatically get their IP addresses. We will create a scope that will give the IP addresses in this range: 172.16.0.100 with this subnet mask. Go the Server dashboard > click on Tools on the top right hand side > Select "DHCP" > When expanding "dc.mydomain.com" you will notice IPv4 and IPv6 are down (you can see they are red) > Expand IPv4 > Right click "IPv4" > New Scope....
 
-For the Scope name, 
+The scope's name will be named what the IP range is. For the Scope's name I put: 172.16.0.100-200. There is no description > Next. 
+<p align="center">
+<img width="750" alt="27 scope name" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/757ff72f-96c5-4252-851e-851de4cc05ae">
+
+For the DHCP Server configuration, we will use the start IP address as 172.16.0.100. End IP address will put as: 172.16.0.200. The length can be set to: 24. The subnet mask is set as: 255.255.255.0
+<p align="center">
+<img width="750" alt="28 start:end IP address" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/4fd8b5ae-7949-43aa-84bd-a22b1848eb36">
 
 
 
