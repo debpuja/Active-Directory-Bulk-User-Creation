@@ -182,10 +182,13 @@ Next up, we will use a powershell script to create all the users. We will do thi
 <p align="center">
 <img width="750" alt="37 opening link" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/531944f7-3de2-417f-a5f2-280530adca10">
 
-Within the zip file, there are two powershell scripts and one text file. Firstly, open the text file. This text file has a thousand randomized names that was retrieved by using a name generator. At the very top of the text file, enter your name as well. 
+Within the zip file, there are two powershell scripts, one text file, and one gitignore file. Firstly, open the text file (called "names"). This text file has a thousand randomized names that was retrieved by using a name generator. At the very top of the text file, enter your name as well (or a fake name if you choose) and remember to save the file! We will use this file to programtically create all of these users and for ourself too.
 <p align="center">
 <img width="750" alt="38 name at top" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/f5a41658-2d62-41af-9b4e-dcf23df4f006">
 
+Next click Start > Windows PowerShell > run Windows PowerShell ISE as administrator. Within Windows PowerShell ISE, open the powershell script "1_CREATE_USERS". In the console pane, type "Set-ExecutionPolicy Unrestricted" then press enter on the keyboard. You will get a prompt after running, click "Yes to All".
+<p align="center">
+<img width="750" alt="39 yes to all" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/bc926293-d0b9-4308-9521-8f048b356e0c">
 
 
 
