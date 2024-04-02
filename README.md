@@ -166,10 +166,13 @@ Finally, when getting to the Activate Scope page, select "Yes, I want to activat
 <p align="center">
 <img width="750" alt="33 activate scope" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/f3d5a019-2e60-47f7-b1b2-abcf088f6a8e">
 
+Right click the DHCP server ("dc.mydomain.com") and click "Authorize". Right click the DHCP server again and click "Refresh".
+<p align="center">
+<img width="750" alt="34 authorize dhcp" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/66e8eb63-ad29-40ec-9271-5e1ec2cf6798">
 
-
-
-
+After refreshing, you should see the IPv4 and IPv6 trun to a green color indicating that both are working and configured. The DNS is sucessfully set up now.
+<p align="center">
+<img width="305" alt="35 green ipv4 and ipv6" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/0ee63e64-1172-4667-b63f-39df68409f57">
 
 
 
