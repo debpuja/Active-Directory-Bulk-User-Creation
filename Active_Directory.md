@@ -190,8 +190,17 @@ Next click Start > Windows PowerShell > run Windows PowerShell ISE as administra
 <p align="center">
 <img width="750" alt="39 yes to all" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/bc926293-d0b9-4308-9521-8f048b356e0c">
 
+Next we will type within the console pane "cd c:\Users\a-pdeb\Desktop\AD_PS-master" and press enter on the keyboard. 
+<p align="center">
+<img width="750" alt="40 location of adps" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/9ece2228-e59e-4ecd-a3bb-67fe6a041f07">
 
+Next, at the toolbar on PowerShell, click the Run Script button. Once you press that button, it will import the active directory module and the script will run to create the users. This will take 2-3 minutes to complete running.
+<p align="center">
+<img width="750" alt="41 creating users" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/0133aaa0-b523-4c9e-a149-7333428a9536">
 
+Additionally, you can also check out active directory in the meantime by going to Start > Windows Administrative Tools > Active Directory Users and Computers > expand mydomain.com > right click mydomain.com > Refresh. After refreshing, you can see that we have a "_USERS" folder with a bunch of users inside. This is jsut for us to visualize that when running the script, it will create all of the users from the text file. 
+<p align="center">
+<img width="750" alt="42 _users folder in active dir" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/88ca8455-6086-414e-a2e9-e621fc68f0f3">
 
 
 
