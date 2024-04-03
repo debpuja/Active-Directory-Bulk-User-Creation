@@ -37,7 +37,7 @@ After powering on the machine, I selected the Windows 2019 Server as the optical
 <p align="center">
 <img width="700" alt="6 Installing windows" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/da5e8adc-f1d1-477c-a6a8-11a398ba37a8">
 
-During the installation it might take 10-15 minutes to install. The server will reboot mutiple times. When prompted to "Press any key to boot from CD or DVD", ignore that and the installation will continue normally. After choosing the preferences, I was prompted to give a password for the default admin account. The password I chose to use (and will use for all passwords for this lab is: Password1). 
+During the installation it might take 5-10 minutes to install. The server will reboot mutiple times. When prompted to "Press any key to boot from CD or DVD", ignore that and the installation will continue normally. After choosing the preferences, I was prompted to give a password for the default admin account. The password I chose to use (and will use for all passwords for this lab is: Password1). 
 <p align="center">
 <img width="700" alt="7 admin password setup" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/367391f7-525f-4f59-9da7-88e0244aba11">
 
@@ -218,16 +218,52 @@ Next, go to Settings > Network > Adapter 1 > changed "Attached to:" to Internal 
 
 Double click the newly made VM. You should get a prompt asking to select a virtual optical disk drive. Locate the Windows 10 ISO you downloaded in the beginning of the lab and select that as your disk drive. Selecting this option will prompt you to begin the installation of Windows 10.
 
-During the instalation process, select the language, time format, and keyboard to your specfications and then click "Install now". When getting to the Activate Windows page, select "I don't have a product key" that's located at the bottom right corner. Then select "Windows 10 Pro" as the operating system you want to install. Then click Next. 
+During the installation process, select the language, time format, and keyboard to your specfications and then click "Install now". When getting to the Activate Windows page, select "I don't have a product key" that's located at the bottom right corner. Then select "Windows 10 Pro" as the operating system you want to install. Then click Next. 
 <p align="center">
 <img width="750" alt="45 windows 10 windows 10 pro" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/d4dc4523-d766-4473-9416-376d9e16b542">
 
-The type of installation we want is "Custom: Install Windows only (advanced)", this selction will format the hard drive and install from scratch. During the installation it might take 10-15 minutes to install. The server will reboot mutiple times. 
+The type of installation we want is "Custom: Install Windows only (advanced)", this selction will format the hard drive and install from scratch. During the installation it might take 5-10 minutes to install. The computer will reboot mutiple times. 
 <p align="center">
 <img width="750" alt="46 installing windows 10 vm" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/b9dc4d81-f2fe-4d01-a4d7-ca627d9334b9">
 
-When prompted to "Press any key to boot from CD or DVD", ignore that and the installation will continue normally. After choosing the preferences, I was prompted to give a password for the default admin account. The password I chose to use (and will use for all passwords for this lab is: Password1). 
+When prompted to "Press any key to boot from CD or DVD", ignore that and the installation will continue normally. Afterwards, you will be prompted to select the region you're in and the type of keyboard. For addition setting configurations, select that you're using this for home use and select "Limited experience" when asking to to connect to Microsoft. For the user's name, I chose "user". 
+<p align="center">
+<img width="750" alt="47 user" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/3f892563-ac80-49d4-b24c-2cd8471a25a2">
 
+We do not need a password for this VM, so click Next. For privacy settings, I change my options from Yes to No. The computer will complete setting up (can take 2-5 minutes). Then the computer will land you to the welcome screen of Windows 10. 
 
+First thing you'll want to do for the Windows 10 VM is to make sure that the interent is working. To do this open Command Prompt and type "ipconfig". There should be an IPv4 address, a subnet mask, and a default gateway. This confirms that the internet works! We can even test it by pinging. Write "ping www.google.com" to the command prompt and recieve the stats for that ping. 
+<p align="center">
+<img width="750" alt="48 checking internet" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/d8a148ae-659b-47ec-886e-26b06345e812">
 
+This ping concludes that we have connectivity all the way to the default gateway (the domain controller). We also know that the domain controller is properly natting it and forwarding it out to the internet so the ping can properly come back to us as an echo reply.
 
+Additionally, we can sucessfully ping mydomain.com on the command prompt as well. 
+<p align="center">
+<img width="750" alt="49 pinging mydomain com" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/bb272bfe-f139-48b0-ba21-4ad3cea091c1">
+
+Next we will rename the PC and join the domain in one step. Start > Settings > System > About > Rename this PC (advanced) (you will find this option if you scroll down on the About page). Once you get to system properties, click "Change". You will then rename your computer here. I named mine, "Windows 10 CLIENT". Also, select "Domain" under Member of. Here you will type, "mydomain.com", and the click "OK". Next, you'll have to join an account to the domain. This brings us back to when we created a domain admin account
+<p align="center">
+<img width="750" alt="50 domain and renaming pc" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/e55895a3-6a48-47ae-b5e9-3865e8c24762">
+
+Next, you'll have to join an account to the domain. This brings us back to when we created a domain admin account. I entered my admin credentials and I logged in! You shuld get a message that states "Welcome to the mydomain.com domain." Afterwards, it will prompt you to restart your computer. 
+<p align="center">
+<img width="750" alt="51 my credentials" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/d2197712-dc3e-4d47-a93c-90332d72b7e0">
+
+Going back to the domain controller VM, open DHCP. Expand the scpoe we made for IPv4 and select Address Leases. We can examine that we have one lease from our client computer. When we created our client computer and joined it to the network, it reached out to the DHCP server automatically and requested an address. Then the DHCP server gave it that address. So now we have lease in here. For an example, if you go to your work DHCP server and you see the leases' folder, you'll probably see hundreds of addresses per scope.
+<p align="center">
+<img width="1=750" alt="52 leases" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/973a60ee-3d71-42a7-8a0d-9ab179a22c9e">
+
+Next, go to Active Directory Users and Computers on the domain controller VM. Under Computers, you can see that after we joined the client computer to the domain, the client automatically placed itself here. This visulizes that the computer is part of the domain.
+<p align="center">
+<img width="750" alt="53 client comp" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/2bfce763-c73d-4278-8e4a-99996f5b00d5">
+
+Next we will go back to our Windows 10 VM. Login to this VM by selecting "Other user". We can use one of the user accounts we created earlier. Since this is the first time we're signing in, it is taking time to create our profile. Essentially, we created a mini corporate network with the bulk users. You can imagine this process as if we got hired at a company and now we're signing in the computer with the credentials corporate gave you. 
+<p align="center">
+<img width="750" alt="54 logging in with pdeb" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/12ba5399-1c52-4cd1-9370-2d591fcd8f69">
+
+You can visualize this furthur by opening the Command Prompt and typing the command "whoami". It will show your username and that you're a member of mydomain. 
+<p align="center">
+<img width="750" alt="55 whoami" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/5e11d537-fdbd-473b-856d-28398935a9f6">
+
+We have sucessfully completed creating an active directory with over a thousand users!
