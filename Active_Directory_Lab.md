@@ -208,11 +208,25 @@ To find your specfic name within mydomain.com, right click mydomain.com > Find. 
 
 At this point within the lab, we have our users created and our lab environment is set up! The last thing to do within our lab is to create a Windows 10 VM in VirtualBox. This VM will use an Internal NIC that will get its IP address from our DHCP server that we configured earlier.
 
-Go to Virtual Box to create a new VM. I will name this VM "Windows 10 Client" (you can name is whatever you'd like). The version of the VM will be: Windows 10 (64-bit).
+Go to Virtual Box to create a new VM. I will name this VM "Windows 10 Client" (you can name is whatever you'd like). The version of the VM will be: Windows 10 (64-bit). For memory size, I chose 2048MB (2GB) and 1 CPU; the amount you input depends on how much RAM the system you're running your machine on. I put 20 GB for the Virtual Hard Disk Size.
 <p align="center">
-<img width="750" alt="44 windows 10 client1 vm" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/688c49a1-e768-45f0-b4a8-a8616275001d">
+<img width="750" alt="44 windows 10 client 1 vm summary" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/3518cc98-a6c8-47c4-8c4d-998d6988c054">
 
+Before we turn on the newly made VM we have to configure the settings. Right click to go to Settings. Go to General > Advanced > change "Shared Clipboard" and "Drag'n'Drop" as Bidirectional. This helps with the ease of copying and pasting within the VM. 
 
+Next, go to Settings > Network > Adapter 1 > changed "Attached to:" to Internal Network. Click "OK" and we've finsihed setting up the settings for this VM!
+
+Double click the newly made VM. You should get a prompt asking to select a virtual optical disk drive. Locate the Windows 10 ISO you downloaded in the beginning of the lab and select that as your disk drive. Selecting this option will prompt you to begin the installation of Windows 10.
+
+During the instalation process, select the language, time format, and keyboard to your specfications and then click "Install now". When getting to the Activate Windows page, select "I don't have a product key" that's located at the bottom right corner. Then select "Windows 10 Pro" as the operating system you want to install. Then click Next. 
+<p align="center">
+<img width="750" alt="45 windows 10 windows 10 pro" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/d4dc4523-d766-4473-9416-376d9e16b542">
+
+The type of installation we want is "Custom: Install Windows only (advanced)", this selction will format the hard drive and install from scratch. During the installation it might take 10-15 minutes to install. The server will reboot mutiple times. 
+<p align="center">
+<img width="750" alt="46 installing windows 10 vm" src="https://github.com/debpuja/Active-Directory-Bulk-User-Creation/assets/163590363/b9dc4d81-f2fe-4d01-a4d7-ca627d9334b9">
+
+When prompted to "Press any key to boot from CD or DVD", ignore that and the installation will continue normally. After choosing the preferences, I was prompted to give a password for the default admin account. The password I chose to use (and will use for all passwords for this lab is: Password1). 
 
 
 
