@@ -4,7 +4,7 @@
 <h2>Description</h2>
 Setting up an Active Directory using Oracle VirtualBox with over 1000 users using Mac OS.
 
-Credits for lab: [Josh Madakor](https://github.com/joshmadakor1]), [YouTube link](https://youtu.be/MHsI8hJmggI?si=jeKxMD7v_-a03UoP)
+Credits for lab: [Josh Madakor](https://github.com/joshmadakor1), [YouTube link](https://youtu.be/MHsI8hJmggI?si=jeKxMD7v_-a03UoP)
 <br />
 
 <h2>Objectives</h2>
